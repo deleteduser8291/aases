@@ -1,0 +1,36 @@
+-- Values --
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/miroeramaa/TurtleLib/main/TurtleUiLib.lua"))()
+local window = library:Window("Script")
+local window2 = library:Window("Other")
+local discord = " --This Guy"
+local quote = "Someone cool said this."
+-- Play Music --
+window2:Box("Music", function(value, focusLost)
+    if focusLost then
+        game:GetService("ReplicatedStorage").GojoRemotes:FireServer(    
+            "Quotes",
+            quote ..discord,
+            "rbxassetid://"..value,
+            900000000000,
+            4000000
+        )
+    end
+end)
+window:Button("Heal (God Mode)", function()
+local A_1 = CFrame.new(114.193939, 96.4977875, -208.351944, 0.737354279, 0.00772963651, -0.675462306, -0.00702621927, 0.99996829, 0.00377289765, 0.675469995, 0.00196378538, 0.737385035)
+local A_2 = 105
+local A_3 = "rbxassetid://137579113"
+local A_4 = 2.2
+local A_5 = 0.22
+local Event = game:GetService("ReplicatedStorage").Heal
+while true do 
+Event:FireServer(A_1, A_2, A_3, A_4, A_5)
+wait(0.5)
+end
+end)
+window:Button("No Cooldown", function()
+    local Cooldown; Cooldown = hookfunction(wait, function(v)
+    v = 0;
+    return Cooldown(v);
+end);
+end)
